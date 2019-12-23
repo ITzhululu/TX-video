@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .look {
+            width: 100vw;
+            height: 100px;
+        }
+        .look_img_lf {
+            float: left;
+            width: 50vw;
+            height: 100px;
+            position: relative;
+        }
+        .look_img_lf img {
+            width: 50vw;
+            height: 100px; 
+        }
+        .dubo {
+            position: absolute;
+            top: 4px;
+            left: 177px;
+            font-size: 12px;
+            border-radius: 4px;
+            color: cornsilk;
+            background-color: rgba(255, 141, 26, 1);
+        }
+        .look_rd {
+            float: right;
+            width: 50vw;
+            height: 100px;
+            font-size: 14px;
+            position: relative;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="look">
+
+
+
+
+        </div>
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+    var aaa = [
+        {
+            name: "国产自拍",
+            ji: "更新至10集/全54集",
+            bo: "独播",
+            img: "./images/图片 3 (10).jpeg"
+        },
+        {
+            name: "日韩专区",
+            ji: "更新至15集/全94集",
+            bo: "独播",
+            img: "./images/图片 3 (11).jpeg"
+        },
+        {
+            name: "欧美经典",
+            ji: "更新至32集/全74集",
+            bo: "独播",
+            img: "./images/图片 3 (2).jpeg"
+        },
+        {
+            name: "cosplay",
+            ji: "更新至1集/全54集",
+            bo: "独播",
+            img: "./images/图片 3 (7).jpeg"
+        },
+        {
+            name: "人妻",
+            ji: "更新至5集/全集66集",
+            bo: "独播",
+            img: "./images/图片 3 (3).jpeg"
+        },
+        {
+            name:"Love in the car",
+            ji: "更新至9集/全集99集",
+            bo: "独播",
+            img: "./images/8.jpeg"
+        }
+    ]
+    var pian = ""
+    for (var i = 0; i < aaa.length; i++) {
+        var pian_rong = aaa[i]
+        pian += ` 
+        <div>
+        <div class="look_img_lf">
+    <img src="`+pian_rong.img + `" alt="">
+            <span class="dubo">` + pian_rong.bo + `</span>
+        </div>
+        <div class="look_rd">
+            <h4>`+ pian_rong.name + `</h4>
+            <span>`+ pian_rong.ji + `</span>
+        </div>
+        </div>
+    `
+       
+    }
+    $(".look").append($(pian))
+
+
+
+</script>
+
+</html>

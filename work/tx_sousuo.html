@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tx_sousuo_app {
+            width: 100vw;
+            height: 100vh;
+
+            font-size: 12px;
+
+        }
+
+        .sou_tou {
+            width: 100vw;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 0 0 0;
+        }
+
+        .sou_lan {
+            width: 75vw;
+            height: 30px;
+            background-color: #e9dfdf;
+            border-radius: 10px;
+            float: left;
+            padding-left: 10px;
+
+        }
+
+        .sou_img {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+        }
+
+        .sou_input {
+            border: 0px solid blue;
+            background-color: #e9dfdf;
+        }
+
+        .sou_quxiao {
+            width: 20vw;
+            height: 30px;
+            float: right;
+        }
+
+        .sou_quxiao>span {
+            padding-left: 40px;
+            color: rgb(204, 179, 37);
+        }
+
+        .hui_tiao {
+            width: 100vw;
+            height: 1px;
+            background-color: #999999;
+            margin-top: 10px;
+        }
+
+        .sou_lishi {
+            width: 100vw;
+            height: 21px;
+            margin-top: 10px;
+
+        }
+
+        .lishi_lf>span {
+            font-size: 12px;
+            color: rgba(166, 166, 166, 1);
+            padding: 0 0 0 10px;
+        }
+
+        .shan_chu {
+            width: 20px;
+            height: 20px;
+            float: right;
+            padding: 0 20px 0 0;
+        }
+
+        .sou_jilu {
+            width: 160px;
+            height: 30px;
+
+            background-color: rgba(166, 166, 166, 0.1);
+            line-height: 30px;
+
+        }
+
+        .sou_jilu span {
+            padding: 0px 0 0 55px;
+            color: rgba(80, 80, 80, 1);
+            font-size: 12px;
+        }
+
+        .lishi_tiao {
+            width: 100vw;
+            height: 30px;
+      
+            line-height: 30px;
+            margin-top: 10px;
+
+        }
+
+        .pai_hang {
+            width: 40px;
+            height: 30px;
+      
+            float: left;
+        }
+
+        .pai_hang span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 10px;
+            line-height: 15px;
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+            border-radius: 2px;
+        }
+
+        .pian_name {
+            width: 95px;
+            font-size: 10px;
+            height: 30px;
+            padding: 0 0 0 20px;
+            float: left;
+        }
+
+        .pian_name span {
+            color: rgba(0, 0, 0, 1);
+        }
+
+        .pian_sheng_jiang {
+            width: 250px;
+         
+            height: 30px;
+            float: left;
+        }
+
+        .pian_sheng_jiang span {
+            height: 50px;
+            float: right;
+            padding-right: 22px;
+        }
+        .hui_hui{
+            width: 90vw;
+            height: 1px;
+            margin: 0 auto;
+            background-color: #99999928;
+         
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tx_sousuo_app">
+        <div class="sou_tou">
+            <div class="sou_lan">
+                <img class="sou_img" src="./images/sou_tu.svg" alt="">
+                <input class="sou_input" type="text" placeholder="请输入片名、主演或导演">
+            </div>
+            <div class="sou_quxiao"> <span>取消</span> </div>
+        </div>
+        <!-- 小灰条 -->
+        <div class="hui_tiao"></div>
+
+        <div class="sou_lishi">
+            <div class="lishi_lf">
+                <span>历史搜索</span>
+                <img class="shan_chu" src="./images/sou_shan.png" alt="">
+            </div>
+        </div>
+        <div class="sou_jilu"><span>明日之星</span></div>
+        <div class="lishi_lf">
+            <span>历史搜索</span>
+        </div>
+        <div class="lishi">
+           
+          
+
+        </div>
+     
+
+
+    </div>
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+    var paihang = [
+        {
+            rgba: "212,48,48,1",
+            pai_ming:"1",
+            name: "扶摇",
+            zhang_fu: "-"
+        },
+        {
+            rgba: "255, 141, 26, 1",
+            pai_ming:"2",
+            name: "甜蜜暴击",
+            zhang_fu: "-"
+        },
+        {
+            rgba: "255, 235, 59, 1",
+            pai_ming:"3",
+            name: "小猪佩奇第4季",
+            zhang_fu: "-"
+        },
+        {
+            rgba: "166, 166, 166, 1",
+            pai_ming:"4",
+            name: "猎毒人",
+            zhang_fu: "-"
+        },
+        {
+            rgba: "166, 166, 166, 1",
+            pai_ming:"5",
+            name: "奔跑吧 第二季",
+            zhang_fu: "-"
+        },
+        {
+            rgba: "166, 166, 166, 1",
+            pai_ming:"6",
+            name: "中国好声音 第七季",
+            zhang_fu: "↓"
+        },
+       
+        {
+            rgba: "166, 166, 166, 1",
+            pai_ming:"7",
+            name: "一千零一夜",
+            zhang_fu: "↑"
+        },
+        {
+            rgba: "166, 166, 166, 1",
+            pai_ming:"8",
+            name: "延禧攻略",
+            zhang_fu: "↑"
+        },
+     
+     
+    ]
+    var re_bo = ""
+    for (var i = 0; i < paihang.length; i++) {
+        var neirong = paihang[i]
+        re_bo += `
+        <div class="lishi_tiao"> 
+                    <div class="pai_hang">
+                            <span style="background-color: rgba(`+neirong.rgba+`);">`+ neirong.pai_ming+`</span>
+                       </div>
+                           <div class="pian_name"> 
+                                   <span>`+ neirong.name+`</span>
+                           </div>
+                               <div class="pian_sheng_jiang"> 
+                                       <span>`+ neirong.zhang_fu+`</span>
+                               </div>
+                             
+            </div>
+            <div class="hui_hui"> </div>
+        `
+       
+    }
+    
+    $(".lishi").append($(re_bo))
+
+</script>
+
+</html>
