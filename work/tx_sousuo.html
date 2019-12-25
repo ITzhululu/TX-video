@@ -10,9 +10,7 @@
         .tx_sousuo_app {
             width: 100vw;
             height: 100vh;
-
             font-size: 12px;
-
         }
 
         .sou_tou {
@@ -165,7 +163,7 @@
                 <img class="sou_img" src="./images/sou_tu.svg" alt="">
                 <input class="sou_input" type="text" placeholder="请输入片名、主演或导演">
             </div>
-            <div class="sou_quxiao"> <span>取消</span> </div>
+            <div class="sou_quxiao"> <span class="fanhui">取消</span> </div>
         </div>
         <!-- 小灰条 -->
         <div class="hui_tiao"></div>
@@ -242,8 +240,8 @@
             name: "延禧攻略",
             zhang_fu: "↑"
         },
-     
-     
+        
+        
     ]
     var re_bo = ""
     for (var i = 0; i < paihang.length; i++) {
@@ -259,7 +257,6 @@
                                <div class="pian_sheng_jiang"> 
                                        <span>`+ neirong.zhang_fu+`</span>
                                </div>
-                             
             </div>
             <div class="hui_hui"> </div>
         `
@@ -267,6 +264,10 @@
     }
     
     $(".lishi").append($(re_bo))
+
+    $(".fanhui").click(function(){
+        location.href = "tx_zhuyei.html"
+    })
 
 </script>
 
